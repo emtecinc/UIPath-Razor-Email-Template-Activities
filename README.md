@@ -7,7 +7,7 @@ Razor Email Template Activity is an activity created for Uipath to generate HTML
 
 ### Getting Started
 
-To build this project we need Visual studio with .Net Framework 4 Client Profile. The next steps mentioned below needs to be  followed:
+To build this project we need Visual studio with .Net Framework 4.6.1. The next steps mentioned below needs to be  followed:
 1) Clone this repository
 2) Install below nuget packages
 
@@ -17,10 +17,10 @@ To build this project we need Visual studio with .Net Framework 4 Client Profile
 PM> Install-Package Newtonsoft.Json
 ```  
 ```
-PM> Install-Package RazorEngine -Version 3.5.0
+PM> Install-Package RazorEngine -Version 3.10.0
 ```
 ```
-PM> Install-Package Microsoft.AspNet.Razor -Version 2.0.30506
+PM> Install-Package Microsoft.AspNet.Razor -Version 3.2.7
 ```
 3) Compile the project
 4) Create nuget package of output dll's

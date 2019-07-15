@@ -64,7 +64,7 @@
                     <sapv:ExpressionTextBox Grid.Row="2" HintText="Enter object expression" 
                                             Expression="{Binding Path=ModelItem.CsHtmlModel, Mode=TwoWay,  
                         Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In }"
-                                            ExpressionType="s:String" Grid.Column="1" 
+                                            ExpressionType="s:Object" Grid.Column="1" 
                                             OwnerActivity="{Binding Path=ModelItem}" MinWidth="300"  Margin="5,10,5,8" />
                 </Grid>
             </DataTemplate>
