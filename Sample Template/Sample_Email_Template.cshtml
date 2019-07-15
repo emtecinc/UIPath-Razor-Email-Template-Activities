@@ -1,0 +1,215 @@
+﻿@model dynamic
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <style>
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        body {
+            font-size: 14px;
+            line-height: 20px;
+            color: #333333;
+        }
+
+        table {
+            border-collapse: collapse;
+            caption-side: bottom;
+            border: none;
+        }
+
+        caption {
+            font-size: 16px;
+            font-weight: bold;
+            padding-top: 5px;
+        }
+
+
+        b {
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: circle;
+        }
+
+        .rotate {
+            transform: rotate(-90deg);
+        }
+
+        .valign-center {
+            vertical-align: middle;
+        }
+
+        .inner-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .bg-green {
+            background-color: #70ad47;
+        }
+
+        .bg-red {
+            background-color: #ff0000;
+        }
+		
+		h1 {
+		font-size: 22px;
+		font-family: arial;
+		text-align: center;
+		}
+
+		.table-responsive {
+			border-collapse: collapse;
+		}
+
+		.table-row {
+			font-size: 12px;
+			font-family: arial;
+			padding: 4px 6px;
+			border: 1px solid #000000;
+		}
+
+		.table-header {
+			background-color: #bfbfbf;
+		} 
+    </style>
+</head>
+<body>
+    <div class="table-content">
+        <table width="620px" class="table-responsive" align="center">
+            <tr>
+                <td>
+                    <h1>Data Import Status Report</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="inner-table" style="width:100%;vertical-align:top;">
+                        <tr>
+                            <td width="30%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;border-bottom:none">Date</td>
+                            <td width="70%" class="table-row" style="padding:5px 10px;border:1px solid #000;border-bottom:none">@Model.Date</td>
+                        </tr>
+                        <tr>
+                            <td width="30%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;border-bottom:none">File Name</td>
+                            <td width="70%" class="table-row" style="padding:5px 10px;border:1px solid #000;border-bottom:none">@Model.FileName</td>
+                        </tr>
+                        <tr>
+                            <td width="30%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;border-bottom:none">File Size</td>
+                            <td width="70%" class="table-row" style="padding:5px 10px;border:1px solid #000;border-bottom:none">@Model.FileSize</td>
+                        </tr>
+                        <tr>
+                            <td width="30%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;border-bottom:none">File Creation Date</td>
+                            <td width="70%" class="table-row" style="padding:5px 10px;border:1px solid #000;border-bottom:none">@Model.FileCreationDate</td>
+                        </tr>
+                        <tr>
+                            <td width="30%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;border-bottom:none">Transaction ID</td>
+                            <td width="70%" class="table-row" style="padding:5px 10px;border:1px solid #000;border-bottom:none">@Model.TransactionId</td>
+                        </tr>
+                        <tr>
+                            <td width="30%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;border-bottom:none">Status</td>
+                            @if (@Model.Status == "Pass")
+                            {
+                                <td width="70%" class="table-row bg-green" style="background-color: #70ad47;padding:5px 10px;border:1px solid #000;border-bottom:none">@Model.Status</td>
+                            }
+                            else
+                            {
+                                <td width="70%" class="table-row bg-red" style="background-color: #ff0000;padding:5px 10px;border:1px solid #000;border-bottom:none">@Model.Status</td>
+                            }
+
+                        </tr>
+                        <tr>
+                            <td width="30%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;border-bottom:none">Zip File Location</td>
+                            <td width="70%" class="table-row" style="padding:5px 10px;border:1px solid #000;border-bottom:none">@Model.ZipFileLocation</td>
+                        </tr>
+                        <tr>
+                            <td width="30%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;">Log File Location</td>
+                            <td width="70%" class="table-row" style="padding:5px 10px;border:1px solid #000;">@Model.LogFileLocation</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr height="33"></tr>
+            <tr>
+                <td>
+                    <table class="inner-table">
+                        <tr>
+                            <td valign="top" width="30%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;">File Name</td>
+                            <td valign="top" width="11%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;">Size</td>
+                            <td valign="top" width="16%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;">No Of Records in file</td>
+                            <td valign="top" width="16%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;">No Of Records Processed</td>
+                            <td valign="top" width="16%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;">No Of Records excluded</td>
+                            <td valign="top" width="11%" class="table-row table-header" style="background-color: #bfbfbf;padding:5px 10px;border:1px solid #000;">Status</td>
+                        </tr>
+                        @for (var i = 0; i < Model.FileDetails.Count; i++)
+                        {
+                            <tr>
+                                <td class="table-row" style="padding:5px 10px;border:1px solid #000;border-top:none">@Model.FileDetails[i].FileName</td>
+                                <td class="table-row" style="padding:5px 10px;border:1px solid #000;border-top:none">@Model.FileDetails[i].Size</td>
+                                <td class="table-row" style="padding:5px 10px;border:1px solid #000;border-top:none">@Model.FileDetails[i].TotalRecords</td>
+                                <td class="table-row" style="padding:5px 10px;border:1px solid #000;border-top:none">@Model.FileDetails[i].ProcessedRecord</td>
+                                <td class="table-row" style="padding:5px 10px;border:1px solid #000;border-top:none">@Model.FileDetails[i].ExcludedRecord</td>
+                                @if (@Model.FileDetails[i].Status == "Pass")
+                                {
+                                    <td class="table-row bg-green" style="background-color: #70ad47;padding:5px 10px;border:1px solid #000;border-top:none">@Model.FileDetails[i].Status</td>
+                                }
+                                else
+                                {
+                                    <td class="table-row bg-red" style="background-color: #ff0000;padding:5px 10px;border:1px solid #000;border-top:none">@Model.FileDetails[i].Status</td>
+                                }
+                            </tr>
+                        }
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

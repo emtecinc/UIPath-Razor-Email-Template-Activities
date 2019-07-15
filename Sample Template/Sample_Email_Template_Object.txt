@@ -1,0 +1,7 @@
+New With {Key.Date="May 25th 2019 12:04 p:m",.FileName="201906011036130530_Inbound.zip",.FileSize="1,232 KB",.FileCreationDate="5/21/2019 12:01:34",
+.TransactionId="2019210521212",.Status="Pass",.ZipFileLocation="archive/201906011036130530_Inbound.zip",.LogFileLocation="logs/201906011036130530_Inbound.txt",
+.FileDetails={New With {Key.FileName="AccountsPayable.csv",.Size="6  kb",.TotalRecords="1223",.ProcessedRecord="1223",.ExcludedRecord="0",.Status="Pass"},
+New With {Key.FileName="AccountsReceivable.csv",.Size="26 kb",.TotalRecords="23231",.ProcessedRecord="23226",.ExcludedRecord="5",.Status="Pass"},
+New With {Key.FileName="Shipments.csv",.Size="3 kb",.TotalRecords="3213",.ProcessedRecord="3211",.ExcludedRecord="2",.Status="Pass"}
+}
+}
