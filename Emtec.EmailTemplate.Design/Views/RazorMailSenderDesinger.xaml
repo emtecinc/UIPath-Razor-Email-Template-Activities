@@ -32,7 +32,7 @@
                     </Grid.RowDefinitions>
 
 
-                    <CheckBox Name="CheckBox" IsChecked="True"  Content="Is teamplate path?" 
+                    <CheckBox Name="CheckBox" IsChecked="True"  Content="Is template path?" 
                               Height="16" HorizontalAlignment="Left" Grid.Column="1" Margin="2"  VerticalAlignment="Top"
                               Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
                     <StackPanel  Name="FilePathPanel"  HorizontalAlignment="Stretch" Grid.Row="1"

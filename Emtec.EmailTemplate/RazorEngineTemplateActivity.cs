@@ -25,7 +25,7 @@ namespace Emtec.EmailTemplate
     using System.IO;
     using Newtonsoft.Json;
     using RazorEngine.Templating;
-    public class EmailTemplateActivity : CodeActivity<string>
+    public class EmailTemplateActivity : CodeActivity
     {
         [Category("CSHTMl Template")]
         [DisplayName("File Path Or File Content")]
@@ -37,6 +37,13 @@ namespace Emtec.EmailTemplate
         [Category("Input Object")]
         [DisplayName("CsHTML Model Object")]
         public InArgument<object> CsHtmlModel
+        {
+            get; set;
+        }
+
+        [Category("Output")]
+        [DisplayName("Result")]
+        public OutArgument<string> Result
         {
             get; set;
         }
@@ -61,7 +68,7 @@ namespace Emtec.EmailTemplate
                 throw new System.Exception("Exception in EmailTemplate : -\n" + ex.Message + " \n" + ex.StackTrace);
             }
         }
-        protected override string Execute(CodeActivityContext context)
+        protected override void Execute(CodeActivityContext context)
         {
             try
             {
@@ -72,7 +79,7 @@ namespace Emtec.EmailTemplate
                     Filedata = File.ReadAllText(this.FilePathOrContent.Get(context));
                 else
                     Filedata = this.FilePathOrContent.Get(context).ToString().Replace("'", "\"");
-                return templateService.Parse(Filedata, data, null, null);
+                Result.Set(context, templateService.Parse(Filedata, data, null, null));
             }
             catch (System.Exception ex)
             {
