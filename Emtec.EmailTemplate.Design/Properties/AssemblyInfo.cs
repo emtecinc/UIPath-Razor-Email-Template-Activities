@@ -9,7 +9,7 @@ using System.Windows;
 [assembly: AssemblyTitle("Emtec.EmailTemplate.Design")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Emtec Inc")]
 [assembly: AssemblyProduct("Emtec.EmailTemplate.Design")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
